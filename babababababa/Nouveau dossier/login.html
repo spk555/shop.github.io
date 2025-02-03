@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Decor - Auth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Minecraftia', sans-serif;
+        }
+
+        body {
+            background-color: #5B7C3D;
+            background-image: url('https://www.transparenttextures.com/patterns/dirt.png');
+        }
+
+        /* Header Styles */
+        header {
+            background: #3c3769 url('https://www.transparenttextures.com/patterns/grass.png');
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #3A5029;
+        }
+
+        .logo img {
+            height: 50px;
+            image-rendering: pixelated;
+            filter: drop-shadow(2px 2px 0 #000);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #FFF;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid #000;
+            background: #727272;
+            box-shadow: inset -2px -2px 0px #4A4A4A;
+            text-shadow: 2px 2px 0 #000;
+            transition: all 0.1s ease;
+        }
+
+        .nav-links a:hover {
+            background: #8B8B8B;
+            transform: translateY(-2px);
+        }
+
+        /* Auth Container Styles */
+        .auth-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: #C6C6C6;
+            border: 4px solid #8B8B8B;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .form-toggle {
+            text-align: center;
+            margin-top: 1rem;
+            color: #FFF;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .form-toggle a {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        input {
+            padding: 0.8rem;
+            border: 2px solid #000;
+            border-radius: 0;
+            font-size: 1rem;
+            background: #E0E0E0;
+            image-rendering: pixelated;
+        }
+
+        button {
+            padding: 0.8rem;
+            background: #727272;
+            color: white;
+            border: 2px solid #000;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.1s ease;
+            box-shadow: inset -2px -2px 0px #4A4A4A;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        button:hover {
+            background: #8B8B8B;
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .auth-container {
+                margin: 2rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="figu.html"><img src="photo/MIN.png" alt="Minecraft Decor Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="oub.html">Our Best Sells</a></li>
+                <li><a href="figu.html">Figures</a></li>
+                <li><a href="index.html">All</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+            <h2 class="form-header">Player Login</h2>
+            <input type="email" placeholder="Email" required style="image-rendering: pixelated;">
+            <input type="password" placeholder="Password" required style="image-rendering: pixelated;">
+            <button type="submit">Join cuminuty</button>
+            <p class="form-toggle">
+                New player? <a onclick="toggleForms()">Register</a>
+            </p>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="auth-form hidden">
+            <h2 class="form-header">Create Account</h2>
+            <input type="text" placeholder="Player Name" required style="image-rendering: pixelated;">
+            <input type="email" placeholder="Email" required style="image-rendering: pixelated;">
+            <input type="password" placeholder="Password" required style="image-rendering: pixelated;">
+            <input type="password" placeholder="Confirm Password" required style="image-rendering: pixelated;">
+            <button type="submit">Start Adventure</button>
+            <p class="form-toggle">
+                Existing user? <a onclick="toggleForms()">Login</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            loginForm.classList.toggle('hidden');
+            signupForm.classList.toggle('hidden');
+        }
+
+        // Form validation and submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('⚡ Login successful! Loading world...');
+            window.location.href = '/dashboard';
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = e.target.querySelector('input[type="password"]').value;
+            const confirmPassword = e.target.querySelectorAll('input[type="password"]')[1].value;
+            
+            if (password !== confirmPassword) {
+                alert('❌ Passwords dont match!');
+                return;
+            }
+            
+            alert('🎉 Account created! Welcome to the server!');
+            toggleForms();
+        });
+    </script>
+</body>
+</html>

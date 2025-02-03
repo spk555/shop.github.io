@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Home Decor</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Minecraftia', sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            background-color: #4a7c3d;
+            background-image: url('https://www.transparenttextures.com/patterns/dirt.png');
+        }
+
+        /* Header Styles */
+        .page-header {
+            background: #374769 url('https://www.transparenttextures.com/patterns/grass.png');
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #302950;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container img {
+            height: 50px;
+            image-rendering: pixelated;
+            filter: drop-shadow(2px 2px 0 #000);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem 5%;
+            min-height: calc(100vh - 150px);
+        }
+
+        .minecraft-box {
+            background: #C6C6C6;
+            border: 4px solid #8B8B8B;
+            padding: 2rem;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+            image-rendering: pixelated;
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart {
+            background: #00FF73;
+            border: 2px solid #000;
+            color: #FFF;
+            padding: 0.5rem 1rem; /* Adjusted padding */
+            font-size: 1rem; /* Adjusted font size */
+            cursor: pointer;
+            text-shadow: 2px 2px 0 #000;
+            box-shadow: inset -2px -2px 0px #4A4A4A;
+            transition: all 0.2s ease;
+        }
+
+        .add-to-cart:hover {
+            background: #00CC5C;
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+            box-shadow: inset 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Item Styles */
+        .item img {
+            max-width: 100%;
+            height: auto;
+            border: 4px solid #727272;
+            margin-bottom: 1rem;
+        }
+
+        .item h3 {
+            color: #FFD700;
+            text-shadow: 2px 2px 0 #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .item p {
+            color: #FFF;
+            font-size: 1rem;
+            text-shadow: 2px 2px 0 #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .item .price {
+            color: #00FF73;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .item .discount {
+            color: #FF69B4;
+            font-size: 1rem;
+            text-shadow: 2px 2px 0 #000;
+        }
+    </style>
+    <!-- Ajouter la police Minecraft -->
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="file:///C:/Users/msi/Desktop/Nouveau%20dossier%20(2)/babababababa/index.html">
+                <img src="photo/MIN.png" alt="Minecraft Home Decor Logo">
+            </a>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#hoodies">Hoodies</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="minecraft-box">
+            <h1 style="color: #FFD700; text-shadow: 3px 3px 0 #000;">Diamond Pickaxe Replica</h1>
+            <p style="color: #FFF; font-size: 1.2rem; text-shadow: 2px 2px 0 #000;">
+                A high-quality replica of the iconic Diamond Pickaxe from Minecraft. This collectible item is perfect for fans who want to showcase their love for the game. Made from durable materials, it’s both a great decoration and a valuable piece for any Minecraft fan's collection.
+            </p>
+            <h3 style="color: #FFD700; text-shadow: 2px 2px 0 #000;">Size Options</h3>
+            <ul style="color: #FFF; font-size: 1rem; text-shadow: 2px 2px 0 #000;">
+                <li>Standard Size</li>
+            </ul>
+            <p style="color: #FFF; font-size: 1rem; text-shadow: 2px 2px 0 #000;">Select the size option before adding to cart.</p>
+            <button class="add-to-cart" onclick="showSizes()">Add to Cart</button>
+        </div>
+    </main>
+
+    <script>
+        // Show size options for the item (Pickaxe)
+        function showSizes() {
+            alert('This item comes in one standard size suitable for display.');
+        }
+    </script>
+</body>
+</html>

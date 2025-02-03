@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Store</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://www.dafont.com/dl/?f=minecraftia') format('truetype');
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Minecraft', sans-serif;
+        }
+        body {
+            background: black;
+            color: white;
+            overflow-x: hidden;
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://preview.redd.it/tnva3hgpheu71.gif?width=540&auto=webp&s=091ff091cdf7a1085707ded3d09216441cba2d68') repeat;
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @keyframes moveBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #4CAF50;
+            transform: scale(1.1);
+        }
+        .store {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+        }
+        .item-card {
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 250px;
+        }
+        .item-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(76, 175, 80, 0.7);
+        }
+        .item-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item-card h3 {
+            margin: 15px 0;
+        }
+        .item-card .price {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .item-card button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .item-card button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 20px rgba(76, 175, 80, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <nav class="navbar">
+        <div class="logo">Minecraft Store</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+    </nav>
+    <div class="store">
+        <div class="item-card">
+            <img src="https://m.media-amazon.com/images/I/819L3tvL2vL.jpg" alt="Diamond Sword">
+            <h3>Diamond Sword Replica</h3>
+            <p class="price">$49.99</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="item-card">
+            <img src="https://i.imgur.com/NL3K2gR.png" alt="Creeper Lamp">
+            <h3>Creeper LED Lamp</h3>
+            <p class="price">$34.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</body>
+</html>
+
